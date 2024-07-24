@@ -1,0 +1,13 @@
+<nav class="left-panel">
+    <img src="images/notary.png" alt="logo" class="left-panel__logo">
+    <span class="left-panel__name">Notary CRM</span>
+    <ul>
+        @for (item of navigationItems; track item.label) {
+            <li>
+                <i [ngClass]="item.iconClass" class="left-panel__icon"></i> 
+                <a [routerLink]="item.route"> {{ item.label }}</a>
+            </li>
+          }
+    </ul>
+</nav>
+  

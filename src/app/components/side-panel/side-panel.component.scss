@@ -1,0 +1,45 @@
+.left-panel {
+    width: 100%;
+    // background-color: #f0f0f0;
+    padding: 10px;
+    color: #fff;
+    
+}
+
+.left-panel__logo {
+    resize: 0.5;
+}
+  
+.left-panel ul {
+    list-style: none;
+    padding: 0;
+}
+  
+  .left-panel li {
+    margin-bottom: 10px;
+    // display: flex;
+    // justify-content: space-between;
+  }
+  
+  .left-panel a {
+    text-decoration: none;
+    color: #4f4f4f;
+  }
+
+  .left-panel li i{
+    height: 50px;
+    min-width: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    // border: 1px solid white;
+  }
+
+  // .left-panel__name {
+  //   display: inline;
+  // }
+  

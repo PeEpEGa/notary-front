@@ -1,0 +1,67 @@
+<div class="table-container">
+  <table class="table">
+    <thead class="table__head">
+        <tr class="table__row-header">
+            <th class="table__row-header-text" colspan="6" scope="col">
+              <p>Clients</p>
+            </th>
+        </tr>
+
+          <tr class="table__row-header">
+            <th class="table__controls" colspan="6" scope="col">
+  
+              <div class="search">
+                <form class="search__form" onsubmit="event.preventDefault();" role="search">
+                  <label class="search__label" for="search">Search for stuff</label>
+                  <input class="search__input" id="search" type="search" placeholder="Search..." autofocus required />
+                  <button class="search__button" type="submit">Go</button>    
+                </form>
+              </div>
+  
+              <!-- <button class="button-4" role="button">+ Add user</button> -->
+              <button mat-button class="button-4" (click)="openCreateClientDialog()">+ Add user</button>
+            </th>
+          </tr>
+
+          
+
+        <tr class="table__row-header">
+            <th class="table__header-cell table__header-cell_profile-image" scope="col"></th>
+            <th class="table__header-cell" scope="col">Name</th>
+            <th class="table__header-cell" scope="col">Address</th>
+            <th class="table__header-cell" scope="col">Phone</th>
+            <th class="table__header-cell" scope="col">Business type</th>
+            <th class="table__header-cell" scope="col">Loyalty status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (client of clients; track client.id) {
+            <tr class="table__row" (click)="selectClient(client)">
+                <td class="table__data-cell"> 
+                    <img class="table__data-cell-image" src="/images/boy.png" alt="boy image">
+                </td>
+                <th class="table__header-cell" scope="row">{{client.name}}</th>
+                <td class="table__data-cell">{{client.address}}</td>
+                <td class="table__data-cell">{{client.phone}}</td>
+                <td class="table__data-cell">{{client.businessType}}</td>
+                <td class="table__data-cell">{{client.loyaltyStatus}}</td>
+            </tr>
+          }
+    </tbody>
+
+    <tfoot class="table__footer">
+      <tr>
+          <td colspan="6" class="table__footer-cell">
+              <div class="pagination">
+                  <button class="button-4" (click)="previousPage()" [disabled]="page === 1">Previous</button>
+                  <span class="pagination__info">Page {{page}} of {{totalPages()}}</span>
+                  <button class="button-4" (click)="nextPage()" [disabled]="page * pageSize >= total">Next</button>
+              </div>
+          </td>
+      </tr>
+  </tfoot>
+</table>
+</div>
+
+

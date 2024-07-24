@@ -1,0 +1,210 @@
+<!-- <p>client-details works!</p>
+@if(selected) {
+    <p>{{selected.name}}</p>
+} -->
+
+
+@if(selected) {
+    <div class="user-card">
+        <div class="person-profile">
+            <figure class="person-profile__image">
+                <img class="person-profile__img" src="images/boy.png" alt="person">
+                <figcaption class="person-profile__figcaption">{{selected.name}}</figcaption>
+            </figure>
+    
+            <div class="person-profile__utils">
+                <div>
+                    <div class="filter button-4">
+                        <i class="fa-solid fa-phone-volume icon"></i>
+                    </div>
+    
+                    <div class="filter button-4">
+                        <i class="fa-solid fa-envelope icon"></i>
+                    </div>
+                </div>
+    
+                <div class="filter button-4">
+                    <i class="fa-solid fa-user-minus icon"></i>
+                </div>
+    
+                <button class="button-4 person-profile__button" disabled role="button">+ New Agreement</button>
+            </div>
+        </div>
+        
+    
+    
+        
+        <div class="agreement-statistics">
+            <canvas id="doughnut"></canvas>
+            <div class="agreement-statistics-info">
+                <h2 class="agreement-statistics-info__header">Agreements: {{selected.dealsAmount}}</h2>
+                <p class="agreement-statistics-info__text">Total revenue: 3000$</p>
+                <button class="button-4" role="button">Details</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <div class="user-analytics">
+        <div class="user-analytics__information">
+            <h2 class="user-analytics__header">Client Information</h2>
+            <div class="filter button-4">
+                <i class="fa-solid fa-pen icon"></i>
+              </div>
+        </div>
+        
+        <form class="client-form" action="post">
+            <div class="client-form__container client-form__client-name">
+                <label class="client-form__label" for="client-name">
+                    <i class="fa-solid fa-user"></i>
+                    Full Name
+                </label>
+                <input class="client-form__input" type="text" name="client-name" id="client-name" value="{{selected.name}}">
+            </div>
+    
+            <div class="client-form__container client-form__client-phone"> 
+                <label class="client-form__label" for="">
+                    <i class="fa-solid fa-square-phone"></i>
+                    Phone
+                </label>
+                <input class="client-form__input" type="tel" name="phone" id="client-phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="{{selected.phone}}" required>
+            </div>
+    
+            <div class="client-form__container client-form__client-address">
+                <label class="client-form__label" for="client-address">
+                    <i class="fa-solid fa-envelope"></i>
+                    address
+                </label>
+                <input class="client-form__input" type="text" name="client-address" id="client-address" value="{{selected.address}}">
+            </div>
+    
+            <div class="client-form__container client-form__client-bussiness-type">
+                <label class="client-form__label" for="client-bussiness-type">
+                    <i class="fa-solid fa-envelope"></i>
+                    Bussiness
+                </label>
+                <input class="client-form__input" type="text" name="client-bussiness-type" id="client-bussiness-type" value="{{selected.businessType}}">
+            </div>
+    
+            <div class="client-form__container client-form__client-business-type">
+                <label class="client-form__label" for="client-business-type">
+                    <i class="fa-solid fa-user-tag"></i>
+                    Status
+                </label>
+                <select class="client-form__select" name="client-business-type" id="client-business-type">
+                    <option value="Bronze">Bronze</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Gold">Gold</option>
+                </select>
+            </div>
+    
+            <div class="client-form__container">
+                <button type="submit" disabled class="client-form__button button-4">Update Client Information</button>
+            </div>
+        </form>
+    </div>
+}
+
+@else {
+<div class="user-card">
+    <div class="person-profile">
+        <figure class="person-profile__image">
+            <img class="person-profile__img" src="images/boy.png" alt="person">
+            <figcaption class="person-profile__figcaption">John Smith</figcaption>
+        </figure>
+
+        <div class="person-profile__utils">
+            <div>
+                <div class="filter button-4">
+                    <i class="fa-solid fa-phone-volume icon"></i>
+                </div>
+
+                <div class="filter button-4">
+                    <i class="fa-solid fa-envelope icon"></i>
+                </div>
+            </div>
+
+            <div class="filter button-4">
+                <i class="fa-solid fa-user-minus icon"></i>
+            </div>
+
+            <button class="button-4 person-profile__button" disabled role="button">+ New Agreement</button>
+        </div>
+    </div>
+    
+
+
+    
+    <div class="agreement-statistics">
+        <canvas id="doughnut"></canvas>
+        <div class="agreement-statistics-info">
+            <h2 class="agreement-statistics-info__header">Agreements: 5</h2>
+            <p class="agreement-statistics-info__text">Total revenue: 3000$</p>
+            <button class="button-4" role="button">Details</button>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="user-analytics">
+    <div class="user-analytics__information">
+        <h2 class="user-analytics__header">Client Information</h2>
+        <button class="filter button-4" disabled>
+            <i class="fa-solid fa-pen icon"></i>
+        </button>
+    </div>
+    
+    <form class="client-form" action="post">
+        <div class="client-form__container client-form__client-name">
+            <label class="client-form__label" for="client-name">
+                <i class="fa-solid fa-user"></i>
+                Full Name
+            </label>
+            <input class="client-form__input" type="text" name="client-name" id="client-name" placeholder="John Smith" disabled>
+        </div>
+
+        <div class="client-form__container client-form__client-phone"> 
+            <label class="client-form__label" for="">
+                <i class="fa-solid fa-square-phone"></i>
+                Phone
+            </label>
+            <input class="client-form__input" type="tel" name="phone" id="client-phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-789" required disabled>
+        </div>
+
+        <div class="client-form__container client-form__client-address">
+            <label class="client-form__label" for="client-address">
+                <i class="fa-solid fa-envelope"></i>
+                address
+            </label>
+            <input class="client-form__input" type="address" name="client-address" id="client-address" placeholder="john.smith@gmail.com" disabled>
+        </div>
+
+        <div class="client-form__container client-form__client-bussiness-type">
+            <label class="client-form__label" for="client-bussiness-type">
+                <i class="fa-solid fa-envelope"></i>
+                Bussiness
+            </label>
+            <input class="client-form__input" type="text" name="client-bussiness-type" id="client-bussiness-type" placeholder="Finance" disabled>
+        </div>
+
+        <div class="client-form__container client-form__client-business-type">
+            <label class="client-form__label" for="client-business-type">
+                <i class="fa-solid fa-user-tag"></i>
+                Status
+            </label>
+            <select class="client-form__select" name="client-business-type" id="client-business-type" disabled>
+                <option value="Bronze">Bronze</option>
+                <option value="Silver">Silver</option>
+                <option value="Gold">Gold</option>
+            </select>
+        </div>
+
+        <div class="client-form__container">
+            <button type="submit" disabled class="client-form__button button-4">Update Client Information</button>
+        </div>
+    </form>
+</div>
+}
+

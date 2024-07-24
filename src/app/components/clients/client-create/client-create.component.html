@@ -1,0 +1,58 @@
+  <h2 mat-dialog-title>New client</h2>
+<mat-dialog-content>
+  <form [formGroup]="clientForm" (ngSubmit)="submit()">
+    <div class="client-form__container client-form__client-name">
+      <label class="client-form__label" for="client-name">
+        <i class="fa-solid fa-user"></i>
+        Full Name
+      </label>
+      <input formControlName="name" class="client-form__input" type="text" id="client-name" placeholder="John Smith" required>
+    </div>
+
+    <div class="client-form__container client-form__client-phone">
+      <label class="client-form__label" for="client-phone">
+        <i class="fa-solid fa-square-phone"></i>
+        Phone
+      </label>
+      <input formControlName="phone" class="client-form__input" type="tel" id="client-phone" placeholder="123-456-789" required>
+    </div>
+
+    <div class="client-form__container client-form__client-address">
+      <label class="client-form__label" for="client-address">
+        <i class="fa-solid fa-envelope"></i>
+        Address
+      </label>
+      <input formControlName="address" class="client-form__input" type="text" id="client-address" placeholder="123 Main St" required>
+    </div>
+
+    <div class="client-form__container client-form__client-business-type">
+      <label class="client-form__label" for="client-business-type">
+        <i class="fa-solid fa-envelope"></i>
+        Business
+      </label>
+      <input formControlName="businessType" class="client-form__input" type="text" id="client-business-type" placeholder="Finance" required>
+    </div>
+
+    <div class="client-form__container client-form__client-status">
+      <label class="client-form__label" for="client-status">
+        <i class="fa-solid fa-user-tag"></i>
+        Status
+      </label>
+      <select formControlName="loyaltyStatus" class="client-form__select" id="client-status">
+        <option value="Bronze">Bronze</option>
+        <option value="Silver">Silver</option>
+        <option value="Gold">Gold</option>
+      </select>
+    </div>
+
+      @if(statusMessage) {
+        <div class="status-message">
+            {{ statusMessage }}
+          </div>
+      }
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button class="button-4" mat-button mat-dialog-close>Cancel</button>
+  <button class="button-4" mat-button (click)="submit()">Create</button>
+</mat-dialog-actions>
